@@ -25,6 +25,6 @@ class php {
   
   file { '/var/log/php':
     ensure => 'directory',
-    owner => 'www-data',
+    owner => 'vagrant',
   }
 }
