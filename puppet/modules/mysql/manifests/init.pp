@@ -3,6 +3,11 @@ class mysql {
     require => Exec['apt-get update'],
     ensure => 'present',
   }
+  
+  package { 'mysql-client':
+    require => Exec['apt-get update'],
+    ensure => 'present',
+  }
 
   service { 'mysql':
     ensure => 'running',

@@ -4,6 +4,11 @@ class postfix {
     ensure => 'present',
   }
   
+  package { 'mutt':
+    require => Exec['apt-get update'],
+    ensure => 'present',
+  }
+  
   file { '/etc/postfix/main.cf':
     ensure => 'present',
     source => 'puppet:///modules/postfix/main.cf',
